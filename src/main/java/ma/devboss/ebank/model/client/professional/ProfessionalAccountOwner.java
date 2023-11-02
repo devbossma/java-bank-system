@@ -1,13 +1,13 @@
 package ma.devboss.ebank.model.client.professional;
 
 import ma.devboss.ebank.model.Enums.BankClient;
+import ma.devboss.ebank.model.IDataModel;
 import ma.devboss.ebank.model.client.IClient;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
-public class ProfessionalAccountOwner implements IClient {
-    private String ID;
+public class ProfessionalAccountOwner implements IClient, IDataModel {
+    private String id;
     private BankClient clientType;
 
     /*
@@ -17,17 +17,17 @@ public class ProfessionalAccountOwner implements IClient {
 
     public ProfessionalAccountOwner() {
 
-        this.ID = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString();
         this.clientType = BankClient.PERSONAL;
     }
 
 
-    public String getID() {
-        return ID;
+    public String getId() {
+        return id;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override

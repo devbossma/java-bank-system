@@ -2,6 +2,7 @@ package ma.devboss.ebank.model.account;
 
 
 import ma.devboss.ebank.model.Enums.AccountStatus;
+import ma.devboss.ebank.model.IDataModel;
 import ma.devboss.ebank.model.client.IClient;
 import ma.devboss.ebank.model.client.personal.PersonalAccountOwner;
 
@@ -12,7 +13,7 @@ import java.util.UUID;
 * private: reached only by the class where they defined.
 * protected: reached by the class where they have been  defined and their subclasses.
 * */
-public abstract class MainBankAccount {
+public abstract class MainBankAccount implements IDataModel {
 
     protected String id;
     private double balance;
@@ -106,5 +107,13 @@ public abstract class MainBankAccount {
                 ", \n\tstatus=" + status +
                 ", \n\taccountOwner=" + accountOwner+
                 '}';
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setAccountOwner(IClient accountOwner) {
+        this.accountOwner = accountOwner;
     }
 }

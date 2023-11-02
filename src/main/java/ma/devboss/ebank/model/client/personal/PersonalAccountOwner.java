@@ -1,13 +1,14 @@
 package ma.devboss.ebank.model.client.personal;
 
 import ma.devboss.ebank.model.Enums.BankClient;
+import ma.devboss.ebank.model.IDataModel;
 import ma.devboss.ebank.model.client.IClient;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class PersonalAccountOwner implements IClient {
-    private String ID;
+public class PersonalAccountOwner implements IClient, IDataModel {
+    private String id;
     private String firstName;
     private String lastName;
     private String midleName;
@@ -17,7 +18,7 @@ public class PersonalAccountOwner implements IClient {
 
     public PersonalAccountOwner() {
 
-        this.ID = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString();
         this.clientType = BankClient.PERSONAL;
     }
 
@@ -33,12 +34,12 @@ public class PersonalAccountOwner implements IClient {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getID() {
-        return ID;
+    public String getId() {
+        return id;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -84,7 +85,7 @@ public class PersonalAccountOwner implements IClient {
     @Override
     public String toString() {
         return "\n\t\tAccountOwner{" +
-                "\n\t\tID='" + ID + '\'' +
+                "\n\t\tID='" + id + '\'' +
                 ", \n\t\tfirstName='" + firstName + '\'' +
                 ", \n\t\tlastName='" + lastName + '\'' +
                 ", \n\t\tmidleName='" + midleName + '\'' +
