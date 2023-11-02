@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 public class EBankSystemJava implements  IEBankSystem{
     public EBankSystemJava() {
-        System.out.println("Welcome To EBank System java");
+
     }
 
     public void run(){
