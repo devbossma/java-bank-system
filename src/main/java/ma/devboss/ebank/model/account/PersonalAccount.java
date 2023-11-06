@@ -13,4 +13,9 @@ public class PersonalAccount extends MainBankAccount{
 
         super(v,mad ,b,owner1 );
     }
+
+    @Override
+    public String getId() {
+        return this.getAccountOwner().getClientType().toString()+this.id;
+    }
 }

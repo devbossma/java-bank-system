@@ -1,13 +1,12 @@
 package ma.devboss.ebank.db;
 
 import ma.devboss.ebank.model.IDataModel;
-import ma.devboss.ebank.model.account.MainBankAccount;
 import ma.devboss.ebank.model.account.PersonalAccount;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BankAccountDataProvider implements IDbProvider{
+public class BankAccountDataProvider implements IDataProvider {
     private List<IDataModel> bankAccounts = new ArrayList<>();
 
     public BankAccountDataProvider() {

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientDataProvider implements IDbProvider
+public class ClientDataProvider implements IDataProvider
 {
     private List<IDataModel> clients = new ArrayList<>();
 

@@ -1,7 +1,7 @@
 package ma.devboss.ebank.system;
 import ma.devboss.ebank.db.BankAccountDataProvider;
 import ma.devboss.ebank.db.ClientDataProvider;
-import ma.devboss.ebank.db.IDbProvider;
+import ma.devboss.ebank.db.IDataProvider;
 import ma.devboss.ebank.model.IDataModel;
 import ma.devboss.ebank.model.account.MainBankAccount;
 import ma.devboss.ebank.model.client.personal.PersonalAccountOwner;
@@ -16,8 +16,8 @@ public class EBankSystemJava implements  IEBankSystem{
 
     public void run(){
 
-        IDbProvider bankAccountsProvider = new BankAccountDataProvider();
-        IDbProvider clientsProvider = new ClientDataProvider();
+        IDataProvider bankAccountsProvider = new BankAccountDataProvider();
+        IDataProvider clientsProvider = new ClientDataProvider();
 
         List<IDataModel> accounts = bankAccountsProvider.provideData();
         List<IDataModel> clients = clientsProvider.provideData();
@@ -26,9 +26,10 @@ public class EBankSystemJava implements  IEBankSystem{
             MainBankAccount account =(MainBankAccount) accounts.get(i);
             account.setAccountOwner((PersonalAccountOwner) clients.get(i));
             PersonalAccountOwner client = (PersonalAccountOwner) account.getAccountOwner();
-            System.out.println(client.getDateOfBirth());;
-        }
+            System.out.println(client.getId());
 
+
+        }
 
 
 
